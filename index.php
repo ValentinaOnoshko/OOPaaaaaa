@@ -1,34 +1,10 @@
 <?php
-class Person {
-    private $name;
-    private $age;
-    private $gender;
 
-    public function __construct() {
-        $this->name = 'Валентина';
-        $this->age = 27;
-        $this->gender = 'female';
-    }
+require_once 'Class/PersonType1.php';
+require_once 'Class/PersonType2.php';
 
-    public function getName() {
-        return $this->name;
-    }
+$person1 = new PersonType1("Валентина", 27, "инженер", "путешествиях", "вязание");
+$person2 = new PersonType2("Мария", 29, "дизайнер", "создании сада", "рисование");
 
-    public function getAge() {
-        return $this->age;
-    }
-
-    public function getGender() {
-        return $this->gender;
-    }
-
-
-    public function introduce() {
-        echo "Привет! Меня зовут " . $this->getName() . 
-             ", мне " . $this->getAge() . " лет" . 
-             ", и я " . ($this->getGender() === 'male' ? 'мужчина' : 'женщина') . ".";
-    }
-}
-
-$valia = new Person();
-$valia->introduce();
+echo $person1->displayInfo() . "\n";
+echo $person2->displayInfo() . "\n";
